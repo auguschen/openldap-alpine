@@ -3,7 +3,7 @@ if [ ! -f /etc/openldap/.inited ]; then
   sh /etc/openldap/initconf.sh && touch /etc/openldap/.inited
 fi
 
-if [ -f /etc/openldap/cert.pem ] || [ -f /etc/openldap/key.pem ]; then
+if [ -f /etc/openldap/cert.pem ] && [ -f /etc/openldap/key.pem ]; then
   if [[ -n "$ERRLVL" ]]; then
     /usr/sbin/slapd -d $ERRLVL -h "ldap:/// ldaps:///"
   else
