@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 if [ ! -f /etc/openldap/.inited ]; then
+  echo "conatiner running up first time."
   sh /etc/openldap/initconf.sh && touch /etc/openldap/.inited
 fi
 
