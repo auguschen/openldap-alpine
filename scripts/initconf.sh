@@ -20,17 +20,11 @@ echo "include         /etc/openldap/schema/nis.schema" >> /etc/openldap/slapd.co
 
 cp /var/lib/openldap/openldap-data/DB_CONFIG.example /var/lib/openldap/openldap-data/DB_CONFIG
 
-if [ ! -d "/run/openldap" ]; then
-  mkdir -p /run/openldap
-fi
+if [ ! -d "/run/openldap" ]; then mkdir -p /run/openldap; fi
 
-if [ ! -d "/etc/openldap/ssl" ]; then
-  mkdir -p /etc/openldap/ssl
-fi
+if [ ! -d "/etc/openldap/ssl" ]; then mkdir -p /etc/openldap/ssl; fi
 
-if [ ! -d "/etc/openldap/slapd.d" ]; then
-  mkdir -p /etc/openldap/slapd.d
-fi
+if [ ! -d "/etc/openldap/slapd.d" ]; then mkdir -p /etc/openldap/slapd.d; fi
 
 chown -R ldap:ldap /etc/openldap/slapd.d
 
