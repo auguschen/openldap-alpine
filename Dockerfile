@@ -11,6 +11,8 @@ COPY scripts/entrypoint.sh /etc/openldap/entrypoint.sh
 
 COPY scripts/initconf.sh /etc/openldap/initconf.sh
 
+COPY scripts/addtls.sh /etc/openldap/addtls.sh
+
 VOLUME [ "/etc/openldap", "/var/lib/openldap/openldap-data" ]
 
 ENTRYPOINT [ "sh", "/etc/openldap/entrypoint.sh" ]

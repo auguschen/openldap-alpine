@@ -26,8 +26,10 @@ if [ ! -d "/etc/openldap/ssl" ]; then mkdir -p /etc/openldap/ssl; fi
 
 if [ ! -d "/etc/openldap/slapd.d" ]; then mkdir -p /etc/openldap/slapd.d; fi
 
+if [ -f /etc/openldap/cert.pem ] && [ -f /etc/openldap/key.pem ]; then
+  sh /etc/openldap/addtls.sh
+fi
+
 chown -R ldap:ldap /etc/openldap/slapd.d
-
 rm -rf /etc/openldap/slapd.d/*
-
 slaptest -u -f /etc/openldap/slapd.conf -F /etc/openldap/slapd.d/
