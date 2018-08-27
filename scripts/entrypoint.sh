@@ -1,10 +1,10 @@
 #!/usr/bin/env sh
 if [ ! -f /etc/openldap/.inited ]; then
   echo "conatiner running up first time."
-  sh /etc/openldap/initconf.sh && touch /etc/openldap/.inited
+  sh /etc/openldap/scripts/initconf.sh && touch /etc/openldap/.inited
 fi
 
-if [ -f /etc/openldap/cert.pem ] && [ -f /etc/openldap/key.pem ]; then
+if [ -f /etc/openldap/ssl/cert.pem ] && [ -f /etc/openldap/ssl/key.pem ]; then
   if [[ -n "$ERRLVL" ]]; then
     /usr/sbin/slapd -d $ERRLVL -h "ldap:/// ldaps:///"
   else

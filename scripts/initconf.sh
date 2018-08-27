@@ -30,9 +30,9 @@ if [ ! -d "/etc/openldap/ssl" ]; then mkdir -p /etc/openldap/ssl; fi
 
 if [ ! -d "/etc/openldap/slapd.d" ]; then mkdir -p /etc/openldap/slapd.d; fi
 
-if [ -f /etc/openldap/cert.pem ] && [ -f /etc/openldap/key.pem ]; then
+if [ -f /etc/openldap/ssl/cert.pem ] && [ -f /etc/openldap/ssl/key.pem ]; then
   echo "add ssl config..."
-  sh /etc/openldap/addtls.sh
+  sh /etc/openldap/scripts/addtls.sh
 fi
 
 chown -R ldap:ldap /etc/openldap/slapd.d
