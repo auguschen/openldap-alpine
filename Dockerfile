@@ -2,8 +2,7 @@ FROM alpine:latest
 
 LABEL maintainer="tianhao.chen@gmail.com"
 
-RUN apk update \
-&& apk add openldap openldap-back-mdb openldap-clients ca-certificates \
+RUN apk add --no-cache openldap openldap-back-mdb openldap-clients ca-certificates \
 && mkdir -p /etc/openldap/scripts
 
 COPY scripts/entrypoint.sh /etc/openldap/scripts/entrypoint.sh
