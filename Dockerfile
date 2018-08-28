@@ -3,16 +3,16 @@ FROM alpine:latest
 LABEL maintainer="tianhao.chen@gmail.com"
 
 RUN apk add --no-cache openldap openldap-back-mdb openldap-clients ca-certificates \
-&& mkdir -p /etc/openldap/scripts
+&& mkdir -p /scripts
 
-COPY scripts/entrypoint.sh /etc/openldap/scripts/entrypoint.sh
+COPY scripts/entrypoint.sh /scripts/entrypoint.sh
 
-COPY scripts/initconf.sh /etc/openldap/scripts/initconf.sh
+COPY scripts/initconf.sh /scripts/initconf.sh
 
-COPY scripts/addtls.sh /etc/openldap/scripts/addtls.sh
+COPY scripts/addtls.sh /scripts/addtls.sh
 
 VOLUME [ "/etc/openldap", "/var/lib/openldap/openldap-data" ]
 
 EXPOSE 389 636
 
-ENTRYPOINT [ "sh", "/etc/openldap/scripts/entrypoint.sh" ]
+ENTRYPOINT [ "sh", "/scripts/entrypoint.sh" ]
