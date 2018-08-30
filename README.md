@@ -26,7 +26,7 @@ and it is for personal purpose
   包含rootpw信息的文件的路径
 
 - ERRLVL  
-  LDAP服务器日志输出参数
+  LDAP服务器日志输出参数，不指定此参数默认使用256
 
 ## defined volumes
 
